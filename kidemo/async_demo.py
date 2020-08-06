@@ -2,7 +2,7 @@
 # author: kuangdd
 # date: 2020/8/5
 """
-### 异步编程
+### async异步编程
 async_demo
 
 * 异步函数的写法。
