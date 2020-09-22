@@ -1,0 +1,418 @@
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <style type="text/css">
+   @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+:root {
+    --bg-color: #272822;
+    --blur-text-color: #333333;
+    --control-text-color: #C8C8C8;
+    --select-text-bg-color: #a2a192;
+    --text-color: #C8C8C8;
+}
+
+
+/* ===== Global ===== */
+
+html {
+    size: auto;
+    font-size: 13px;
+    background-color: #1A1A1D;
+    color: #C5C6C7;
+}
+
+body {
+    max-width: 1224px;
+    margin: 0 auto;
+}
+
+html,
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#write {
+    size: auto;
+    padding: 70px 10ch;
+    max-width: 1224px;
+    margin: 0 auto;
+}
+
+.md-math-block,
+.md-rawblock,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 2rem 0;
+}
+
+a {
+    color: #e6db74;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #807B49;
+}
+
+code {
+    color: #f92672;
+    font-family: 'Inconsolata', monospace;
+}
+
+blockquote {
+    border-left: 7px solid #424241;
+    padding: 5px 10px;
+    background-color: #333332;
+}
+
+ul,
+ol {
+    margin-left: 40px;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+#write li p {
+    margin-bottom: 0;
+}
+
+p>.md-image:only-child:not(.md-img-error) img,
+p>img:only-child {
+    margin: 0;
+}
+
+table {
+    background-color: transparent;
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 20px;
+    background-color: #2a2a2a;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #424242;
+}
+
+td,
+th {
+    border: 1px solid #696969;
+    padding: 10px;
+}
+
+pre.md-meta-block {
+    margin-top: 40px;
+    border-bottom: 1px dotted white;
+    padding: 10px;
+    line-height: 20px;
+    background: #272822;
+}
+
+hr {
+    margin: 50px 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: none;
+}
+
+ ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #f1f1f1;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #d1d1d1;
+}
+
+
+/* ===== Typora GUI ===== */
+
+#typora-sidebar {
+    background: #272822;
+}
+
+.file-node-content {
+    color: #C5C6C7;
+}
+
+.file-node-content:hover {
+    color: #ebebeb;
+}
+
+.file-tree-node.active>.file-node-background {
+    background-color: #55544e;
+}
+
+.btn-primary {
+    background-color: #a6e22e;
+}
+
+.btn-primary:hover {
+    background-color: #90c02f;
+}
+
+.modal-content {
+    border: 1px solid #696969;
+}
+
+.dropdown-menu .divider {
+    border-top: 1px solid #696969;
+}
+
+.dropdown-menu>li>a {
+    color: #C5C6C7;
+}
+
+
+/* ===== Code Blocks ===== */
+
+.md-fences {
+    border: 1px solid #696969;
+    border-radius: 5px;
+    padding: 5px;
+    background: #272822;
+}
+
+.cm-s-inner.CodeMirror {
+    color: #ffffff;
+}
+
+.cm-s-inner span.cm-comment {
+    color: #75715e;
+}
+
+.cm-s-inner span.cm-atom {
+    color: #ae81ff;
+}
+
+.cm-s-inner span.cm-number {
+    color: #ae81ff;
+}
+
+.cm-s-inner span.cm-operator {
+    color: #fff;
+}
+
+.cm-s-inner span.cm-comment.cm-attribute {
+    color: #97b757;
+}
+
+.cm-s-inner span.cm-comment.cm-def {
+    color: #bc9262;
+}
+
+.cm-s-inner span.cm-comment.cm-tag {
+    color: #bc6283;
+}
+
+.cm-s-inner span.cm-comment.cm-type {
+    color: #5998a6;
+}
+
+.cm-s-inner span.cm-property,
+.cm-s-inner span.cm-attribute {
+    color: #a6e22e;
+}
+
+.cm-s-inner span.cm-keyword {
+    color: #f92672;
+}
+
+.cm-s-inner span.cm-builtin {
+    color: #f92672;
+}
+
+.cm-s-inner span.cm-string {
+    color: #e6db74;
+}
+
+.cm-s-inner span.cm-variable {
+    color: #fff;
+}
+
+.cm-s-inner span.cm-variable-2 {
+    color: #fff;
+}
+
+.cm-s-inner span.cm-variable-3,
+.cm-s-inner span.cm-type {
+    color: #f92672;
+}
+
+.cm-s-inner span.cm-def {
+    color: #ffffff;
+}
+
+.cm-s-inner span.cm-bracket {
+    color: #f8f8f2;
+}
+
+.cm-s-inner span.cm-tag {
+    color: #f92672;
+}
+
+.cm-s-inner span.cm-header {
+    color: #ae81ff;
+}
+
+.cm-s-inner span.cm-link {
+    color: #ae81ff;
+}
+
+.cm-s-inner span.cm-error {
+    background: #f92672;
+    color: #f8f8f0;
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+    text-decoration: underline;
+    color: white !important;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid white;
+}
+
+
+/* ===== Responsive ===== */
+
+@media screen and (max-width: 768px) {
+    #write {
+        padding: 50px 1ch;
+    }
+    ul,
+    ol {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    html {
+        font-size: 10px;
+    }
+    #write {
+        padding: 20px 3ch;
+    }
+    ul,
+    ol {
+        margin-left: 5px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    html {
+        font-size: 10px;
+    }
+    #write {
+        padding: 5px 2ch;
+    }
+}
+  </style>
+ </head>
+ <body>
+  <h2>
+   哈哈，每天笑一笑
+  </h2>
+  <h4>
+   要用身份证号码确认
+  </h4>
+  <pre><code>昨天一MM手机丢了,急得没办法告诉我同学,我同学那是相当镇静,掏出手机便开始跟那贼发短信聊起天来。
+同学:妈要给你寄五千块钱,你把你建行卡号告诉我!
+贼很快回:213************。
+同学:不对吧?我记得好像不是这个!
+贼:哦,这是我新办的卡,你先把钱打到这上吧!
+同学:好的,不过存款时好像还需要用你身份证号码确认,你把号码也发过来吧。
+过了一会儿,贼:3245235********。
+同学:咦?怎么只有15位?你身份证号不是十八位吗?你认真点儿好不好,要不妈就不给你寄钱了!
+贼很快回复:嘿嘿,刚才打错了,应该是23456546*******。
+同学:好的!乖儿,你就老老实实地坐在家里等警察叔叔来抓你吧!
+然后我同学把身份证号送到海淀公安局,结果今天下午就拿到了手机!
+</code></pre>
+  <h4>
+   带照相机上来
+  </h4>
+  <pre><code>有一群学生正在爬山,快到山顶的时候,带队的老师问:“哪个同学跑得最快?”
+“我。”一个平时特别调皮的学生答道。
+“那好”,老师说,“照相机刚才忘记带上来了,你下去把它带上来。”
+</code></pre>
+  <h4>
+   汽车忽然刹住了
+  </h4>
+  <pre><code>侦探学校举行毕业考试,有一个问题是:公路上有一辆汽车飞驰,没有开灯。突然之间,有一个穿黑衣服的醉鬼走到路中间。这时没有路灯,也没有月亮。眼看那个人就要被汽车撞倒,但汽车忽然刹住了,是什么原因?
+有人答:因为醉鬼的眼睛发光。
+还有人答:因为醉鬼大声叫喊。
+都不对,正确的答案是:当时是白天。
+</code></pre>
+  <h4>
+   牛肉面
+  </h4>
+  <pre><code>一天,一个小伙子到一家小餐馆吃饭,
+看到一位漂亮的女孩子坐在那里让他呯然心动,
+小伙子鼓起勇气走上前跟女孩子搭讪:
+“你好,你叫什么?”女孩头也不抬地说:
+“牛肉面,快一点!”
+</code></pre>
+  <h4>
+   她怀孕了
+  </h4>
+  <pre><code>小张:你不是最讨厌结婚的吗?
+小王:我是因为她身材的曲线才娶她。
+小张:她一定有副令你难以抗拒的身材了?
+小王:哪儿,她怀孕了!
+</code></pre>
+  <h4>
+   我会魔法了
+  </h4>
+  <pre><code>坐地铁,一小女孩在我的背后拿根魔杖玩。
+她拿着魔杖指着我的后背:“我要把你变丑!”
+我听完,笑了。
+转身过去就听到一声惊叫:“妈妈!妈妈!我会魔法了。”
+</code></pre>
+  <h4>
+   最好欺负
+  </h4>
+  <pre><code>那天,偶然看到儿子交给老师的作业《我最喜爱的家庭成员》。
+作业中儿子像列家谱一般提到爷爷,奶奶,妈妈,姥姥……可到结尾处笔锋一转,写道:“要说家里我最喜欢的是谁,相信你们已经猜到了,当然是我的爸爸。其他人对我十分严厉,只有爸爸最好……”
+我心花怒放,可等我翻至下页时,却见第一行行首写着两个字----欺负。
+</code></pre>
+  <h4>
+   屁股坐的
+  </h4>
+  <pre><code>女儿上一年级了,一天妈妈指着作业本上的“木”字问女儿,女儿无奈地摇摇头说不认识。
+妈妈指着家里的板凳问女儿:“板凳是什么做的?”
+女儿想了想回答说:“板凳是屁股坐的。”
+</code></pre>
+  <h4>
+   都是自己同学
+  </h4>
+  <pre><code>一位医学院的同学发微博:突然发现以后自己生病去医院,门诊是自己同学,辅助是自己同学,护理是自己同学,主刀、麻醉还是自己同校的同学……
+想想都害怕!都是一群考试前才看书的突击货!
+</code></pre>
+  <h4>
+   幸福
+  </h4>
+  <pre><code>老师家访,问学生:“你们家幸福吗?”
+学生骄傲地答道:“幸福!”
+父亲跑过来给了他记耳光,骂道:“臭小子,谁让你改姓的!”
+</code></pre>
+  <h4>
+   啊啦嘻哈
+  </h4>
+  <p>
+   关注微信公众号“啊啦嘻哈”，回复“幽默笑话”，即可获得更多幽默笑话。
+  </p>
+ </body>
+</html>

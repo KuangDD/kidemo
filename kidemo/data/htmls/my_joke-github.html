@@ -1,0 +1,510 @@
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <style type="text/css">
+   :root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Open Sans Regular'),url('./github/400.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: normal;
+    src: local('Open Sans Italic'),url('./github/400i.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Open Sans Bold'),url('./github/700.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: bold;
+    src: local('Open Sans Bold Italic'),url('./github/700i.woff') format('woff')
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write{
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 20px 30px 40px 30px;
+	padding-top: 20px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+body > *:first-child {
+    margin-top: 0 !important;
+}
+body > *:last-child {
+    margin-bottom: 0 !important;
+}
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    /*background: url("../../images/modules/styleguide/para.png") no-repeat 10px center;*/
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+body > h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+body > h1:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+body > h3:first-child,
+body > h4:first-child,
+body > h5:first-child,
+body > h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+    margin-top: 0;
+}
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 4px 2px 4px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 0.2em 1em;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media screen and (min-width: 914px) {
+    /*body {
+        width: 854px;
+        margin: 0 auto;
+    }*/
+}
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+  </style>
+ </head>
+ <body>
+  <h2>
+   哈哈，每天笑一笑
+  </h2>
+  <h4>
+   要用身份证号码确认
+  </h4>
+  <pre><code>昨天一MM手机丢了,急得没办法告诉我同学,我同学那是相当镇静,掏出手机便开始跟那贼发短信聊起天来。
+同学:妈要给你寄五千块钱,你把你建行卡号告诉我!
+贼很快回:213************。
+同学:不对吧?我记得好像不是这个!
+贼:哦,这是我新办的卡,你先把钱打到这上吧!
+同学:好的,不过存款时好像还需要用你身份证号码确认,你把号码也发过来吧。
+过了一会儿,贼:3245235********。
+同学:咦?怎么只有15位?你身份证号不是十八位吗?你认真点儿好不好,要不妈就不给你寄钱了!
+贼很快回复:嘿嘿,刚才打错了,应该是23456546*******。
+同学:好的!乖儿,你就老老实实地坐在家里等警察叔叔来抓你吧!
+然后我同学把身份证号送到海淀公安局,结果今天下午就拿到了手机!
+</code></pre>
+  <h4>
+   带照相机上来
+  </h4>
+  <pre><code>有一群学生正在爬山,快到山顶的时候,带队的老师问:“哪个同学跑得最快?”
+“我。”一个平时特别调皮的学生答道。
+“那好”,老师说,“照相机刚才忘记带上来了,你下去把它带上来。”
+</code></pre>
+  <h4>
+   汽车忽然刹住了
+  </h4>
+  <pre><code>侦探学校举行毕业考试,有一个问题是:公路上有一辆汽车飞驰,没有开灯。突然之间,有一个穿黑衣服的醉鬼走到路中间。这时没有路灯,也没有月亮。眼看那个人就要被汽车撞倒,但汽车忽然刹住了,是什么原因?
+有人答:因为醉鬼的眼睛发光。
+还有人答:因为醉鬼大声叫喊。
+都不对,正确的答案是:当时是白天。
+</code></pre>
+  <h4>
+   牛肉面
+  </h4>
+  <pre><code>一天,一个小伙子到一家小餐馆吃饭,
+看到一位漂亮的女孩子坐在那里让他呯然心动,
+小伙子鼓起勇气走上前跟女孩子搭讪:
+“你好,你叫什么?”女孩头也不抬地说:
+“牛肉面,快一点!”
+</code></pre>
+  <h4>
+   她怀孕了
+  </h4>
+  <pre><code>小张:你不是最讨厌结婚的吗?
+小王:我是因为她身材的曲线才娶她。
+小张:她一定有副令你难以抗拒的身材了?
+小王:哪儿,她怀孕了!
+</code></pre>
+  <h4>
+   我会魔法了
+  </h4>
+  <pre><code>坐地铁,一小女孩在我的背后拿根魔杖玩。
+她拿着魔杖指着我的后背:“我要把你变丑!”
+我听完,笑了。
+转身过去就听到一声惊叫:“妈妈!妈妈!我会魔法了。”
+</code></pre>
+  <h4>
+   最好欺负
+  </h4>
+  <pre><code>那天,偶然看到儿子交给老师的作业《我最喜爱的家庭成员》。
+作业中儿子像列家谱一般提到爷爷,奶奶,妈妈,姥姥……可到结尾处笔锋一转,写道:“要说家里我最喜欢的是谁,相信你们已经猜到了,当然是我的爸爸。其他人对我十分严厉,只有爸爸最好……”
+我心花怒放,可等我翻至下页时,却见第一行行首写着两个字----欺负。
+</code></pre>
+  <h4>
+   屁股坐的
+  </h4>
+  <pre><code>女儿上一年级了,一天妈妈指着作业本上的“木”字问女儿,女儿无奈地摇摇头说不认识。
+妈妈指着家里的板凳问女儿:“板凳是什么做的?”
+女儿想了想回答说:“板凳是屁股坐的。”
+</code></pre>
+  <h4>
+   都是自己同学
+  </h4>
+  <pre><code>一位医学院的同学发微博:突然发现以后自己生病去医院,门诊是自己同学,辅助是自己同学,护理是自己同学,主刀、麻醉还是自己同校的同学……
+想想都害怕!都是一群考试前才看书的突击货!
+</code></pre>
+  <h4>
+   幸福
+  </h4>
+  <pre><code>老师家访,问学生:“你们家幸福吗?”
+学生骄傲地答道:“幸福!”
+父亲跑过来给了他记耳光,骂道:“臭小子,谁让你改姓的!”
+</code></pre>
+  <h4>
+   啊啦嘻哈
+  </h4>
+  <p>
+   关注微信公众号“啊啦嘻哈”，回复“幽默笑话”，即可获得更多幽默笑话。
+  </p>
+ </body>
+</html>
